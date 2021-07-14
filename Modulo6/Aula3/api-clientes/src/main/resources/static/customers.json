@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "cpf": "111.111.111-11",
+        "email": "customer1@gmail.com",
+        "cellphone": "(11) 1111-1111",
+        "orders": [
+            {
+                "orderId": 1,
+                "products": [
+                    {
+                        "id": 1,
+                        "description": "Shorts",
+                        "color": "Cinza",
+                        "quantity": 3,
+                        "price": 15
+                    }
+                ],
+                "totalPrice": 45
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "cpf": "222.222.222-22",
+        "email": "customer2@gmail.com",
+        "cellphone": "(22) 2222-2222",
+        "orders": [
+            {
+                "orderId": 2,
+                "products": [
+                    {
+                        "id": 2,
+                        "description": "Coca-cola",
+                        "color": "Preto",
+                        "quantity": 1,
+                        "price": 10
+                    },
+                    {
+                        "id": 3,
+                        "description": "Twix",
+                        "color": "Marrom",
+                        "quantity": 1,
+                        "price": 5
+                    }
+                ],
+                "totalPrice": 15
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "cpf": "33333333-33",
+        "email": "customer3@teste.com",
+        "cellphone": "(33) 3333-3333",
+        "orders": [
+            {
+                "orderId": 3,
+                "products": [
+                    {
+                        "id": 4,
+                        "description": "Garrafa",
+                        "color": "Cinza",
+                        "quantity": 1,
+                        "price": 10
+                    }
+                ],
+                "totalPrice": 10
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "cpf": "444.444.444-44",
+        "email": "customer4@teste.com",
+        "cellphone": "(44) 4444-4444",
+        "orders": []
+    }
+]
