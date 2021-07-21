@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "orders": [
+      {
+        "orderId": 1,
+        "tableId": 1,
+        "dishes": [
+          {
+            "dishId": 1,
+            "price": 10,
+            "description": "Pastel",
+            "quantity": 1
+          },
+          {
+            "dishId": 2,
+            "price": 15,
+            "description": "Carne",
+            "quantity": 2
+          },
+          {
+            "dishId": 3,
+            "price": 5,
+            "description": "Coxinha",
+            "quantity": 3
+          }
+        ]
+      },
+      {
+        "orderId": 2,
+        "tableId": 1,
+        "dishes": [
+          {
+            "dishId": 4,
+            "price": 5,
+            "description": "Cuca de banana",
+            "quantity": 2
+          },
+          {
+            "dishId": 5,
+            "price": 20,
+            "description": "Peixe",
+            "quantity": 1
+          }
+        ]
+      }
+    ],
+    "totalPrice": 85
+  },
+  {
+    "id": 2,
+    "orders": [
+      {
+        "orderId": 3,
+        "tableId": 2,
+        "dishes": [
+          {
+            "dishId": 6,
+            "price": 1.5,
+            "description": "Pão com manteiga",
+            "quantity": 2
+          }
+        ]
+      }
+    ],
+    "totalPrice": 3
+  },
+  {
+    "id": 3,
+    "orders": [],
+    "totalPrice": 0
+  },
+  {
+    "id": 4,
+    "orders": [],
+    "totalPrice": 0
+  },
+  {
+    "id": 5,
+    "orders": [],
+    "totalPrice": 0
+  }
+]
