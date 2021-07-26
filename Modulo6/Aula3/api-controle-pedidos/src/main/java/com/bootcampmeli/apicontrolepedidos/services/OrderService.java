@@ -1,5 +1,6 @@
 package com.bootcampmeli.apicontrolepedidos.services;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,8 +27,16 @@ public class OrderService implements IOrderService {
     }
 
     @Override
-    public List<OrderDTO> getAllOrders() {
+    public List<OrderDTO> getAllOrders(LocalDate date) {
         List<Order> allOrders = this.tableService.getAllOrders();
+
+        if (date != null) {
+            allOrders = allOrders
+                .stream()
+                .filter(order -> order.getDate().equals(date))
+                .collect(Collectors.toList());
+        }
+
         return allOrders.stream().map(OrderDTO::toDTO).collect(Collectors.toList());
     }
 

@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.bootcampmeli.apiclientes.entities.*;
+import com.bootcampmeli.apiclientes.entities.Customer;
+import com.bootcampmeli.apiclientes.entities.Order;
+import com.bootcampmeli.apiclientes.entities.Product;
 import com.bootcampmeli.apiclientes.interfaces.ICustomerRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import org.springframework.stereotype.Repository;
 
@@ -32,6 +35,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     public void readJson() throws RuntimeException {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
 
         try {
             File customersJson = new File(jsonPath);
@@ -47,6 +51,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     public void writeJson() {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
 
         try {
             File customersJson = new File(jsonPath);

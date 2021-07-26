@@ -16,6 +16,7 @@ import com.bootcampmeli.apicontrolepedidos.entities.Table;
 import com.bootcampmeli.apicontrolepedidos.interfaces.ITableRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import org.springframework.stereotype.Repository;
 
@@ -32,6 +33,7 @@ public class TableRepository implements ITableRepository {
     @Override
     public void readJson() throws RuntimeException {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
 
         try {
             File tablesJson = new File(jsonPath);
@@ -48,6 +50,7 @@ public class TableRepository implements ITableRepository {
     @Override
     public void writeJson() {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
 
         try {
             File tablesJson = new File(jsonPath);

@@ -1,6 +1,7 @@
 package com.bootcampmeli.apicontrolepedidos.entities;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,6 +12,7 @@ public class Order {
     @JsonIgnore
     private static long universalId = 1L;
     private long tableId;
+    private LocalDate date;
     private List<Dish> dishes;
 
     
@@ -19,6 +21,7 @@ public class Order {
     public Order(long tableId, List<Dish> dishes) {
         this.orderId = universalId++;
         this.tableId = tableId;
+        this.date = LocalDate.now();
         this.dishes = dishes;
     }
 
@@ -32,6 +35,10 @@ public class Order {
 
     public void setTableId(long tableId) {
         this.tableId = tableId;
+    }
+
+    public LocalDate getDate() {
+        return this.date;
     }
 
     public List<Dish> getDishes() {

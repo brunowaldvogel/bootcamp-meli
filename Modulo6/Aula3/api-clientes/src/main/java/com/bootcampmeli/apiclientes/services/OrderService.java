@@ -1,7 +1,9 @@
 package com.bootcampmeli.apiclientes.services;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.bootcampmeli.apiclientes.dtos.OrderDTO;
 import com.bootcampmeli.apiclientes.dtos.UpsertOrderDTO;
@@ -29,8 +31,16 @@ public class OrderService implements IOrderService {
     }
 
     @Override
-    public List<OrderDTO> getOrders() {
+    public List<OrderDTO> getOrders(LocalDate date) {
         List<Order> orders = this.orderRepository.getAllOrders();
+
+        if (date != null) {
+            orders = orders
+                .stream()
+                .filter(order -> order.getDate().equals(date))
+                .collect(Collectors.toList());
+        }
+
         return OrderDTO.convertToDto(orders);
     }
 

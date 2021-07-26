@@ -1,5 +1,6 @@
 package com.bootcampmeli.apiclientes.interfaces;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.bootcampmeli.apiclientes.dtos.OrderDTO;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface IOrderService {
 
-    List<OrderDTO> getOrders();
+    List<OrderDTO> getOrders(LocalDate date);
     Order findOrderById(long orderId);
     OrderDTO getOrderById(long orderId);
     OrderDTO insertOrder(Long customerId, UpsertOrderDTO upsertOrderDTO);

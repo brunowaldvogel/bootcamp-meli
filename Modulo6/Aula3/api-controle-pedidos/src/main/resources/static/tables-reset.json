@@ -5,6 +5,7 @@
       {
         "orderId": 1,
         "tableId": 1,
+        "date": "2020-10-11",
         "dishes": [
           {
             "dishId": 1,
@@ -29,6 +30,7 @@
       {
         "orderId": 2,
         "tableId": 1,
+        "date": "2020-10-11",
         "dishes": [
           {
             "dishId": 4,
@@ -53,6 +55,7 @@
       {
         "orderId": 3,
         "tableId": 2,
+        "date": "2020-09-30",
         "dishes": [
           {
             "dishId": 6,

@@ -1,6 +1,7 @@
 package com.bootcampmeli.apiclientes.entities;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ public class Order {
     
     private long orderId;
     private static long universalId = 1L;
+    private LocalDate date;
     private List<Product> products = new ArrayList<>();
     private BigDecimal totalPrice = new BigDecimal(0);;
     
@@ -18,6 +20,7 @@ public class Order {
             List<Product> products, 
             BigDecimal totalPrice) {
         this.orderId = universalId++;
+        this.date = LocalDate.now();
         this.products = products;
         this.totalPrice = totalPrice;
     }
@@ -32,6 +35,10 @@ public class Order {
 
     public List<Product> getProducts() {
         return products;
+    }
+
+    public LocalDate getDate() {
+        return this.date;
     }
 
     public void setProducts(List<Product> products) {

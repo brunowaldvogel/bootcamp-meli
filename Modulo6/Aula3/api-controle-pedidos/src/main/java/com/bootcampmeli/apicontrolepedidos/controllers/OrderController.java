@@ -1,11 +1,13 @@
 package com.bootcampmeli.apicontrolepedidos.controllers;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.bootcampmeli.apicontrolepedidos.dtos.OrderDTO;
 import com.bootcampmeli.apicontrolepedidos.dtos.UpsertOrderDTO;
 import com.bootcampmeli.apicontrolepedidos.interfaces.IOrderService;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
@@ -29,8 +32,9 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<OrderDTO> getAllOrders() {
-        return this.orderService.getAllOrders();
+    public List<OrderDTO> getAllOrders(
+            @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date) {
+        return this.orderService.getAllOrders(date);
     }
 
     @GetMapping("{orderId}")
